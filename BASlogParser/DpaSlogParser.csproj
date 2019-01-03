@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{065AC499-860A-49ED-8924-FD7622CE271E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>BASlogParser</RootNamespace>
-    <AssemblyName>BASlogParser</AssemblyName>
+    <RootNamespace>DpaSlogParser</RootNamespace>
+    <AssemblyName>DpaSlogParser</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>BASlogParser.Program</StartupObject>
+    <StartupObject>DpaSlogParser.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>

@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BASlogParser
+namespace DpaSlogParser
 {
     //
     //Program will be the starting point of this console application. It is where DataTables of the GeneralOperations class kick off for each project drive
@@ -20,7 +20,7 @@ namespace BASlogParser
             //Search 7 days back from the date of running to try to catch any project whose SLOG file was inaccessible 
             int daysBack = -7;
             //The output folder is where the CSV files will be stored
-            string CsvOutputFolder = BASlogParser.Properties.Settings.Default.CsvOutputFolder;
+            string CsvOutputFolder = DpaSlogParser.Properties.Settings.Default.CsvOutputFolder;
             //For each office, a DataTable from the GeneralOperations class is created, taking in the parameters for the office and its project drive
             DataTable dpaCollection = GeneralOperations.PerformOperations(daysBack, "DPA", Properties.Settings.Default.DpaDrivePath, "BIM_Slog_Data", Properties.Settings.Default.CsvOutputFolder);            
         }        
@@ -441,15 +441,15 @@ namespace BASlogParser
     {
         //The following are just for creating the connection string
         private static readonly string integratedSecurity = "False";
-        private static readonly string userId = BASlogParser.Properties.Settings.Default.SQLServerUser;
-        private static readonly string password = BASlogParser.Properties.Settings.Default.SQLServerPwd;
+        private static readonly string userId = DpaSlogParser.Properties.Settings.Default.SQLServerUser;
+        private static readonly string password = DpaSlogParser.Properties.Settings.Default.SQLServerPwd;
         private static readonly string connectTimeout = "3";
         private static readonly string encrypt = "False";
         private static readonly string trustServerCertificate = "True";
         private static readonly string applicationIntent = "ReadWrite";
         private static readonly string multiSubnetFailover = "False";
-        private static readonly string dbServer = BASlogParser.Properties.Settings.Default.SQLServerName;
-        private static readonly string database = BASlogParser.Properties.Settings.Default.DpaBimDbName;
+        private static readonly string dbServer = DpaSlogParser.Properties.Settings.Default.SQLServerName;
+        private static readonly string database = DpaSlogParser.Properties.Settings.Default.DpaBimDbName;
         public static string adminDataSqlConnectionString = "Server=" + dbServer +
                                 ";Database=" + database +
                                 ";Integrated Security=" + integratedSecurity +
@@ -737,7 +737,7 @@ namespace BASlogParser
             sb.AppendLine();
 
             //Write the log to a file
-            System.IO.StreamWriter file = new StreamWriter(BASlogParser.Properties.Settings.Default.CsvOutputFolder + "\\" + officeLocation + " Parser Log " + year + month + day + ".txt");
+            System.IO.StreamWriter file = new StreamWriter(DpaSlogParser.Properties.Settings.Default.CsvOutputFolder + "\\" + officeLocation + " Parser Log " + year + month + day + ".txt");
             file.WriteLine(sb.ToString());
         }
     }
