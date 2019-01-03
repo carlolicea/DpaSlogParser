@@ -17,8 +17,8 @@ namespace DpaSlogParser
     {
         static void Main(string[] args)
         {
-            //Search 7 days back from the date of running to try to catch any project whose SLOG file was inaccessible 
-            int daysBack = -7;
+            //Search # days back from the date of running to try to catch any project whose SLOG file was inaccessible 
+            int daysBack = -Properties.Settings.Default.DaysBack;
             //The output folder is where the CSV files will be stored
             string CsvOutputFolder = DpaSlogParser.Properties.Settings.Default.CsvOutputFolder;
             //For each office, a DataTable from the GeneralOperations class is created, taking in the parameters for the office and its project drive
@@ -140,23 +140,23 @@ namespace DpaSlogParser
                 bool skip = false;
                 string projectNumber = "";
                 //The following are three cases where a project number could be found. The project number is needed for the data collection
-                Match matchProjectNumber1 = Regex.Match(slogfile, @"[0-9][0-9][0-9][0-9][0-9][0-9].[0-9][0-9]", RegexOptions.IgnoreCase);
-                Match matchProjectNumber2 = Regex.Match(slogfile, @"[0-9][0-9][0-9][0-9][0-9][0-9].\w\w", RegexOptions.IgnoreCase);
-                Match matchProjectNumber3 = Regex.Match(slogfile, @"[0-9][0-9][0-9][0-9][0-9][0-9]", RegexOptions.IgnoreCase);
+                Match matchProjectNumber1 = Regex.Match(slogfile, @"[0-9][0-9][0-9][0-9][0-9].[0-9][0-9].[0-9][0-9][0-9]", RegexOptions.IgnoreCase);
+                Match matchProjectNumber2 = Regex.Match(slogfile, @"[0-9][0-9][0-9][0-9][0-9].[0-9][0-9]", RegexOptions.IgnoreCase);
+                Match matchProjectNumber3 = Regex.Match(slogfile, @"[0-9][0-9][0-9][0-9][0-9].\w\w", RegexOptions.IgnoreCase);
 
                 if (matchProjectNumber1.Success)
                 {
-                    GroupCollection groups = Regex.Match(slogfile, @"[0-9][0-9][0-9][0-9][0-9][0-9].[0-9][0-9]", RegexOptions.IgnoreCase).Groups;
+                    GroupCollection groups = Regex.Match(slogfile, @"[0-9][0-9][0-9][0-9][0-9].[0-9][0-9].[0-9][0-9][0-9]", RegexOptions.IgnoreCase).Groups;
                     projectNumber = matchProjectNumber1.Value;
                 }
                 else if (matchProjectNumber2.Success)
                 {
-                    GroupCollection groups = Regex.Match(slogfile, @"[0-9][0-9][0-9][0-9][0-9][0-9].\w\w", RegexOptions.IgnoreCase).Groups;
+                    GroupCollection groups = Regex.Match(slogfile, @"[0-9][0-9][0-9][0-9][0-9].[0-9][0-9]", RegexOptions.IgnoreCase).Groups;
                     projectNumber = matchProjectNumber2.Value;
                 }
                 else if (matchProjectNumber3.Success)
                 {
-                    GroupCollection groups = Regex.Match(slogfile, @"[0-9][0-9][0-9][0-9][0-9][0-9]", RegexOptions.IgnoreCase).Groups;
+                    GroupCollection groups = Regex.Match(slogfile, @"[0-9][0-9][0-9][0-9][0-9].\w\w", RegexOptions.IgnoreCase).Groups;
                     projectNumber = matchProjectNumber3.Value;
                 }
                 else
