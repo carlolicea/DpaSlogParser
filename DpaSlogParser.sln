@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28407.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DpaSlogParser", "BASlogParser\DpaSlogParser.csproj", "{065AC499-860A-49ED-8924-FD7622CE271E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DpaSlogParser", "DpaSlogParser\DpaSlogParser.csproj", "{065AC499-860A-49ED-8924-FD7622CE271E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
