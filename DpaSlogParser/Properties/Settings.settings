@@ -17,11 +17,17 @@
     <Setting Name="CsvOutputFolder" Type="System.String" Scope="Application">
       <Value Profile="(Default)">C:\SLOG Data</Value>
     </Setting>
-    <Setting Name="DpaDrivePath" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">\\davis1\projects</Value>
+    <Setting Name="DpaDrivePath2018" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\Prj3\2018</Value>
     </Setting>
     <Setting Name="DaysBack" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">2</Value>
+      <Value Profile="(Default)">7</Value>
+    </Setting>
+    <Setting Name="DpaDrivePath2017" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\Prj2\2017</Value>
+    </Setting>
+    <Setting Name="DpaDrivePath2019" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\Prj4\2019</Value>
     </Setting>
   </Settings>
 </SettingsFile>

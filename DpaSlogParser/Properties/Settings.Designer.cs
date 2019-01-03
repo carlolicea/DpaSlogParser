@@ -70,19 +70,43 @@ namespace DpaSlogParser.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\\\\davis1\\projects")]
-        public string DpaDrivePath {
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\Prj3\\2018")]
+        public string DpaDrivePath2018 {
             get {
-                return ((string)(this["DpaDrivePath"]));
+                return ((string)(this["DpaDrivePath2018"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("7")]
         public int DaysBack {
             get {
                 return ((int)(this["DaysBack"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\Prj2\\2017")]
+        public string DpaDrivePath2017 {
+            get {
+                return ((string)(this["DpaDrivePath2017"]));
+            }
+            set {
+                this["DpaDrivePath2017"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\Prj4\\2019")]
+        public string DpaDrivePath2019 {
+            get {
+                return ((string)(this["DpaDrivePath2019"]));
+            }
+            set {
+                this["DpaDrivePath2019"] = value;
             }
         }
     }

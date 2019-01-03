@@ -22,7 +22,9 @@ namespace DpaSlogParser
             //The output folder is where the CSV files will be stored
             string CsvOutputFolder = DpaSlogParser.Properties.Settings.Default.CsvOutputFolder;
             //For each office, a DataTable from the GeneralOperations class is created, taking in the parameters for the office and its project drive
-            DataTable dpaCollection = GeneralOperations.PerformOperations(daysBack, "DPA", Properties.Settings.Default.DpaDrivePath, "BIM_Slog_Data", Properties.Settings.Default.CsvOutputFolder);            
+            DataTable dpaCollection2017 = GeneralOperations.PerformOperations(daysBack, "DPA2017", Properties.Settings.Default.DpaDrivePath2017, "BIM_Slog_Data", Properties.Settings.Default.CsvOutputFolder);            
+            DataTable dpaCollection2018 = GeneralOperations.PerformOperations(daysBack, "DPA2018", Properties.Settings.Default.DpaDrivePath2018, "BIM_Slog_Data", Properties.Settings.Default.CsvOutputFolder);            
+            DataTable dpaCollection2019 = GeneralOperations.PerformOperations(daysBack, "DPA2019", Properties.Settings.Default.DpaDrivePath2019, "BIM_Slog_Data", Properties.Settings.Default.CsvOutputFolder);            
         }        
     }
 
@@ -83,7 +85,7 @@ namespace DpaSlogParser
                         //Then try cycling through those paths and find only the ones that reside in the E1 Revit folder
                         try
                         {
-                            if (file.Contains("E1 Revit"))
+                            if (file.Contains(@"Design - Construction\Drawings - Models\Revit"))
                             {
                                 //The attributes of the file need reset to eliminate any Read Only attributes
                                 File.SetAttributes(file, FileAttributes.Normal);
