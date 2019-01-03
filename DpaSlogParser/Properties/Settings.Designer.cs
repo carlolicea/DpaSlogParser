@@ -25,7 +25,7 @@ namespace DpaSlogParser.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("tableau\\\\sqlexpress,1433")]
+        [global::System.Configuration.DefaultSettingValueAttribute("DPM146\\SQLEXPRESS")]
         public string SQLServerName {
             get {
                 return ((string)(this["SQLServerName"]));
@@ -43,7 +43,7 @@ namespace DpaSlogParser.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Boulder4747")]
+        [global::System.Configuration.DefaultSettingValueAttribute("T3kZ!lla")]
         public string SQLServerPwd {
             get {
                 return ((string)(this["SQLServerPwd"]));
@@ -52,7 +52,7 @@ namespace DpaSlogParser.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("DpaBimData")]
+        [global::System.Configuration.DefaultSettingValueAttribute("DPA_BIM_Data")]
         public string DpaBimDbName {
             get {
                 return ((string)(this["DpaBimDbName"]));
